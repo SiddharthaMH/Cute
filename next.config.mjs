@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // GitHub Pages does not support Next.js image optimization
   },
-  basePath: "/your-repo", // Change 'your-repo' to your actual repository name
-  assetPrefix: "/your-repo",
+  basePath: "/Cute", // Change 'your-repo' to your actual repository name
+  assetPrefix: "/Cute",
 };
 export default nextConfig;
