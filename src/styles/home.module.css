@@ -1,0 +1,172 @@
+/* Ensure the entire page is covered */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(45deg, #efeee9, #eb4272);
+}
+
+
+/* Main container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, #efeee9, #eb4272);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Heading styles */
+.heading {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+/* Fixing the image size */
+.img {
+  width: 150px;  /* Set fixed width */
+    height: auto;  /* Maintain aspect ratio */
+    max-width: 30vw; /* Prevents it from being too big */
+    max-height: 200px; /* Keeps it properly sized */
+    object-fit: contain; /* Prevents stretching */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Button Styles - Restored Shadow */
+.btn1, .btn2 {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Courier New';
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* YES button */
+.btn1 {
+  font-size: 25px;
+  padding: 10px 20px;
+  border: 2px solid red;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.btn1:hover {
+  background-color: #fcb2b2;
+  color: white;
+  transform: translateY(5px);
+}
+
+/* NO button */
+.btn2 {
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ---- FLOATING HEARTS (BALLOONS) ---- */
+.heartContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Prevent interaction */
+  overflow: hidden;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  bottom: 0;
+  animation: floatUp 8s linear infinite;
+}
+
+/* Heart Floating Animation */
+@keyframes floatUp {
+  0% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+  }
+}
+
+/* ---- FLOATING IMAGES FOR FINAL PAGE ---- */
+.floatingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  border: none;
+}
+
+
+/* Floating Images - Moving from Bottom to Top */
+.floating {
+  position: absolute;
+  animation: floatUpImages 30s ease-in-out infinite;
+  z-index: 15;
+}
+
+/* Floating Images Animation */
+@keyframes floatUpImages {
+  0% {
+      transform: translateY(100vh);
+      opacity: 0;
+  }
+  10% {
+      opacity: 1;
+  }
+  20%{
+    transform: translateY(-1vh);
+  }
+  50%{
+    transform: translateY(-10vh);
+  }
+  100% {
+      transform: translateY(-120vh);
+      opacity: 1;
+  }
+  101% {
+    transform: translateY(-50vh); /* Reset back to bottom */
+    opacity: 0;
+}
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .floating {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .floating:nth-child(odd) {
+    left: calc(10% + (var(--index) * 5vw));
+  }
+
+  .floating:nth-child(even) {
+    left: calc(15% + (var(--index) * 5vw));
+  }
+}
+
