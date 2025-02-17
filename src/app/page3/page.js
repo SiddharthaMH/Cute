@@ -25,7 +25,14 @@ export default function Page1() {
         <p>Me tujhe pura duniya dikhaunga 🥺</p>
         <p>Aajana meere sath babyyy</p>
         </div>
-        <Image src={img1} className={styles.img} alt="new" />
+        <Image
+          src={img1}  // Change img1 to the correct image variable
+          alt="New"
+          width={250}  // Increase width (change this value)
+          height={250} // Increase height (change this value)
+          className={styles.img}
+        />
+
       </div>
 
       <div className={styles.btn}>
