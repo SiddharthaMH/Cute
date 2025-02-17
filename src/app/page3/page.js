@@ -28,8 +28,8 @@ export default function Page1() {
         <Image
           src={img1}  // Change img1 to the correct image variable
           alt="New"
-          width={250}  // Increase width (change this value)
-          height={250} // Increase height (change this value)
+          width={450}  // Increase width (change this value)
+          height={450} // Increase height (change this value)
           className={styles.img}
         />
 
